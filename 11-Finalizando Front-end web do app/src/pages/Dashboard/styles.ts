@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
+import ArrowLeftIcon from '../../assets/arrow-left-icon.svg';
+import ArrowRightIcon from '../../assets/arrow-right-icon.svg';
 
 export const Container = styled.div``;
 
@@ -222,12 +224,14 @@ export const Calendar = styled.aside`
   width: 380px;
 
   .DayPicker {
-    background: #28262e;
     border-radius: 10px;
+    font-size: 16px;
   }
 
   .DayPicker-wrapper {
     padding-bottom: 0;
+    background: #3e3b47;
+    border-radius: 0.6rem;
   }
 
   .DayPicker,
@@ -235,21 +239,52 @@ export const Calendar = styled.aside`
     width: 100%;
   }
 
+  .DayPicker-NavButton {
+    color: #999591 !important;
+  }
+
+  .DayPicker-NavButton--prev {
+    background: url(${ArrowLeftIcon}) no-repeat center;
+    right: auto;
+    left: 1.5em;
+    margin-right: 0;
+  }
+
+  .DayPicker-NavButton--next {
+    background: url(${ArrowRightIcon}) no-repeat center;
+  }
+
   .DayPicker-Month {
     border-collapse: separate;
     border-spacing: 8px;
-    margin: 16px;
+    margin: 1rem 0 0 0;
+    padding: 16px;
+    background: #28262e;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .DayPicker-Caption {
+    margin-bottom: 1em;
+    padding: 0 1em;
+    color: #f4ede8;
+
+    > div {
+      text-align: center;
+    }
+  }
+
+  .DayPicker-Weekday {
+    color: #666360;
   }
 
   .DayPicker-Day {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .DayPicker-Day--available:not(.DayPicker-Day--outside) {
     background: #3e3b47;
-    border-radius: 10px;
-    color: #fff;
+    border-radius: 0.6rem;
   }
 
   .DayPicker:not(.DayPicker--interactionDisabled)
@@ -259,6 +294,7 @@ export const Calendar = styled.aside`
 
   .DayPicker--today {
     font-weight: normal;
+    color: #fff;
   }
 
   .DayPicker-Day--disabled {
@@ -268,7 +304,7 @@ export const Calendar = styled.aside`
 
   .DayPicker-Day--selected {
     background: #ff9000 !important;
-    border-radius: 10px;
+    border-radius: 0.6rem;
     color: #232129 !important;
   }
 `;
