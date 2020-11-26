@@ -31,6 +31,9 @@ export const OkButton = styled(RectButton)`
   border-radius: 10px;
   margin-top: 24px;
   padding: 12px 24px;
+
+  width: 100px;
+  height: 50px;
 `;
 
 export const OkButtonText = styled.Text`
